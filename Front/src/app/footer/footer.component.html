@@ -1,0 +1,16 @@
+<!-- <a class="next" [routerLink]="[ '/' ]"></a> -->
+
+<ng-container [ngSwitch]="path">
+<a class="next" *ngSwitchCase="'/'" routerLink="/formator">
+    Next >> 
+</a>
+<a class="next" *ngSwitchCase="'/redactor'" routerLink="/formator">
+    Next >> 
+</a>
+<a class="next" *ngSwitchCase="'/formator'" routerLink="/result">
+    Next >> 
+</a>
+<a class="next" *ngSwitchCase="'/result'" routerLink="/">
+    Начать заново
+</a>
+</ng-container>

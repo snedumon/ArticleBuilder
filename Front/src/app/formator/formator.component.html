@@ -1,0 +1,100 @@
+<!-- <div [innerHTML]="atricleHtml" class="view"></div> -->
+<app-view class="view"></app-view>
+<div class="paragraph-formator">
+    <button class="generate-button" (click)="regenerateStyles($event)">
+        <div>Regenerate all styles</div>
+        <div class="refresh-ico" id="refresh-ico">&#10227;</div>
+    </button>
+    <select class="style-selector" ngModel="{{selectedTag}}" (change)="tagOnChange($event.target.value)">
+        <option [value]="i" *ngFor="let i of tags">{{i}}</option>
+    </select>
+
+    <div [ngSwitch]="selectedTag">
+    <ng-template ngSwitchCase="H1-H6">
+
+            <div class="style-wrapper">
+                <div>text-align:</div>
+                <select name="text-align" value={{h1h6Styles.textAlign}} (change)="hAlignOnChange($event)">
+                    <option value={{item}} *ngFor="let item of textAlignOptions">{{item}}</option>
+                </select>
+            </div>
+            <div *ngFor="let tag of [{name: 'h1', size: h1h6Styles.h1Size},{name: 'h2', size: h1h6Styles.h2Size},{name: 'h3', size: h1h6Styles.h3Size},{name: 'h4', size: h1h6Styles.h4Size},{name: 'h5', size: h1h6Styles.h5Size},{name: 'h6', size: h1h6Styles.h6Size}]" class="style-wrapper">
+                    <div>{{tag.name}} font-size: </div>
+                    <div>
+                        <input name={{tag.name}} type="number" min="7" max="72" value={{tag.size}} (change)="hSizeChange($event)"> px
+                    </div>
+            </div>
+            <div class="style-wrapper">
+                <div>font-weight:</div>
+                <select name="font-weight" value={{h1h6Styles.fontWeight}} (change)="hWeightOnChange($event)">
+                    <option value={{item}} *ngFor="let item of fontWeightOptions">{{item}}</option>
+                </select>
+            </div>
+            <div class="style-wrapper">
+                <div>font-style:</div>
+                <select name="font-style" value={{h1h6Styles.fontStyle}} (change)="hStyleOnChange($event)">
+                    <option value={{item}} *ngFor="let item of fontStyleOptions">{{item}}</option>
+                </select>
+            </div>
+
+    </ng-template>
+    <ng-template ngSwitchCase="p">
+
+            <div class="style-wrapper">
+                <div>text-align:</div>
+                <select name="text-align" value={{h1h6Styles.textAlign}} (change)="pAlignOnChange($event)">
+                    <option value={{item}} *ngFor="let item of textAlignOptions">{{item}}</option>
+                </select>
+            </div>
+            <div class="style-wrapper">
+                        <div>font-size: </div>
+                        <div>
+                            <input type="number" min="7" max="72" value={{pStyles.pSize}} (change)="pSizeChange($event)"> px
+                        </div>
+            </div>
+            <div class="style-wrapper">
+                <div>font-weight:</div>
+                <select name="font-weight" value={{h1h6Styles.fontWeight}} (change)="pWeightOnChange($event)">
+                    <option value={{item}} *ngFor="let item of fontWeightOptions">{{item}}</option>
+                </select>
+            </div>
+            <div class="style-wrapper">
+                <div>font-style:</div>
+                <select name="font-style" value={{h1h6Styles.fontStyle}} (change)="pStyleOnChange($event)">
+                    <option value={{item}} *ngFor="let item of fontStyleOptions">{{item}}</option>
+                </select>
+            </div>
+
+    </ng-template>
+    <ng-template ngSwitchCase="a">
+
+            <div class="style-wrapper">
+                <div>text-decoration: </div>
+                <select name="text-decoration">
+                        <option value="underlined">underlined</option>
+                        <option value="none">none</option>
+                </select>
+            </div>
+            <div class="style-wrapper">
+                    <div>color: </div>
+                    <select name="color">
+                            <option value="blue">blue</option>
+                            <option value="yellow">yellow</option>
+                            <option value="red">red</option>
+                            <option value="green">green</option>
+                    </select>
+                    
+            </div>
+    </ng-template>
+    <ng-template ngSwitchCase="ul & li">
+        Hello {{selectedTag}}
+    </ng-template>
+    <ng-template ngSwitchCase="ol & li">
+        Hello {{selectedTag}}
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        {{selectedTag}}
+    </ng-template>
+    </div>
+    
+</div>

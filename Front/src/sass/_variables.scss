@@ -1,0 +1,26 @@
+// $color_light_green: white;
+$color_dark_green: #007701;
+$border: 1px solid #007701;
+
+%spase-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%button {
+    cursor: pointer;
+}
+
+%button-text {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+    color: $color_dark_green;
+}
+
+%appearance-none {
+    -webkit-appearance: listbox;
+    -moz-appearance: listbox;
+    appearance: listbox;
+}

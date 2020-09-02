@@ -1,0 +1,30 @@
+app-editor {
+    overflow: auto;
+    margin: 10px;   
+
+}
+
+app-redactor {
+    // margin: 10px;
+}
+
+app-formator {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: $editor-columns;
+    grid-template-areas: $editor-areas;
+
+    .view {
+        grid-area: formator-view;
+        // overflow: hidden;
+    
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+    .paragraph-formator {
+        grid-area: formator-format;
+    }
+
+}

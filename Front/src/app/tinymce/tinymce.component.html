@@ -1,0 +1,12 @@
+<editor [init]="{
+  custom: { title: 'Custom menu', items: '' },
+  toolbar: 'formatselect | bold italic strikethrough  | link',
+  height: 450,
+  statusbar: false
+}"
+[(ngModel)]="editorContent" (onBlur)="contentChange($event)"></editor>
+<!-- {{dataModel}} -->
+<!-- <editor [init]="{
+  plugins: 'lists advlist',
+  toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+}"></editor> -->

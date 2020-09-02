@@ -1,0 +1,21 @@
+app-footer {
+    // background: linear-gradient(white 0%, $color_light_green 10%, $color_dark_green);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-top: $border;
+    @extend %button;
+
+    .next {
+        @extend %button-text;
+        margin-left: 10px;
+
+
+        transition: 1s ease;
+    }
+
+    &:hover .next{
+        margin-left: 150px;
+        // color: $color_dark_green;
+    }
+}
